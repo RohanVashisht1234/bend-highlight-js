@@ -8,7 +8,7 @@
 
 export default function(hljs) {
   const regex = hljs.regex;
-  const IDENT_RE = /[a-zA-Z_$][a-zA-Z0-9_$]*/; 
+  const IDENT_RE = /[a-zA-Z_$][a-zA-Z0-9_$]*/;
   const RESERVED_WORDS = [
     "def",
     "switch",
@@ -84,52 +84,52 @@ export default function(hljs) {
     className: 'string',
     contains: [hljs.BACKSLASH_ESCAPE],
     variants: [{
-        begin: /([uU]|[bB]|[rR]|[bB][rR]|[rR][bB])?'''/,
-        end: /'''/,
-        contains: [
-          hljs.BACKSLASH_ESCAPE,
-          PROMPT
-        ],
-        relevance: 10
-      },
-      {
-        begin: /([uU]|[rR])'/,
-        end: /'/,
-        relevance: 10
-      },
-      {
-        begin: /([uU]|[rR])"/,
-        end: /"/,
-        relevance: 10
-      },
-      {
-        begin: /([bB]|[bB][rR]|[rR][bB])'/,
-        end: /'/
-      },
-      {
-        begin: /([bB]|[bB][rR]|[rR][bB])"/,
-        end: /"/
-      },
-      {
-        begin: /([fF][rR]|[rR][fF]|[fF])'/,
-        end: /'/,
-        contains: [
-          hljs.BACKSLASH_ESCAPE,
-          LITERAL_BRACKET,
-          SUBST
-        ]
-      },
-      {
-        begin: /([fF][rR]|[rR][fF]|[fF])"/,
-        end: /"/,
-        contains: [
-          hljs.BACKSLASH_ESCAPE,
-          LITERAL_BRACKET,
-          SUBST
-        ]
-      },
-      hljs.APOS_STRING_MODE,
-      hljs.QUOTE_STRING_MODE
+      begin: /([uU]|[bB]|[rR]|[bB][rR]|[rR][bB])?'''/,
+      end: /'''/,
+      contains: [
+        hljs.BACKSLASH_ESCAPE,
+        PROMPT
+      ],
+      relevance: 10
+    },
+    {
+      begin: /([uU]|[rR])'/,
+      end: /'/,
+      relevance: 10
+    },
+    {
+      begin: /([uU]|[rR])"/,
+      end: /"/,
+      relevance: 10
+    },
+    {
+      begin: /([bB]|[bB][rR]|[rR][bB])'/,
+      end: /'/
+    },
+    {
+      begin: /([bB]|[bB][rR]|[rR][bB])"/,
+      end: /"/
+    },
+    {
+      begin: /([fF][rR]|[rR][fF]|[fF])'/,
+      end: /'/,
+      contains: [
+        hljs.BACKSLASH_ESCAPE,
+        LITERAL_BRACKET,
+        SUBST
+      ]
+    },
+    {
+      begin: /([fF][rR]|[rR][fF]|[fF])"/,
+      end: /"/,
+      contains: [
+        hljs.BACKSLASH_ESCAPE,
+        LITERAL_BRACKET,
+        SUBST
+      ]
+    },
+    hljs.APOS_STRING_MODE,
+    hljs.QUOTE_STRING_MODE
     ]
   };
 
@@ -140,14 +140,14 @@ export default function(hljs) {
     className: 'number',
     relevance: 0,
     variants: [{
-        begin: `(\\b(${digitpart})|(${pointfloat}))[eE][+-]?(${digitpart})[jJ]?(?=${lookahead})`
-      },
-      {
-        begin: `(${pointfloat})[jJ]?`
-      },
-      {
-        begin: `\\b([1-9](_?[0-9])*|0+(_?0)*)[lLjJ]?(?=${lookahead})`
-      }
+      begin: `(\\b(${digitpart})|(${pointfloat}))[eE][+-]?(${digitpart})[jJ]?(?=${lookahead})`
+    },
+    {
+      begin: `(${pointfloat})[jJ]?`
+    },
+    {
+      begin: `\\b([1-9](_?[0-9])*|0+(_?0)*)[lLjJ]?(?=${lookahead})`
+    }
     ]
   };
   const COMMENT_TYPE = {
@@ -156,14 +156,14 @@ export default function(hljs) {
     end: /$/,
     keywords: KEYWORDS,
     contains: [{ // prevent keywords from coloring `type`
-        begin: /# type:/
-      },
-      // comment within a datatype comment includes no keywords
-      {
-        begin: /#/,
-        end: /\b\B/,
-        endsWithParent: true
-      }
+      begin: /# type:/
+    },
+    // comment within a datatype comment includes no keywords
+    {
+      begin: /#/,
+      end: /\b\B/,
+      endsWithParent: true
+    }
     ]
   };
   const PARAMS = {
@@ -226,7 +226,7 @@ export default function(hljs) {
       {
         match: [
           /\bdef/, /\s+/,
-          IDENT_RE,
+          IDENT_RE
         ],
         scope: {
           1: "keyword",
