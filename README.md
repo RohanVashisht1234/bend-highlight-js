@@ -1,7 +1,7 @@
 # Bend - a language grammar for [bend programming language](https://higherorderco.com/)
 
 
-bend is a high-level language for native multi-threading created by [The higher order company](https://higherorderco.com/).
+Bend is a high-level language for native multi-threading created by [The higher order company](https://higherorderco.com/).
 
 ## Usage
 
