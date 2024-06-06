@@ -8,7 +8,7 @@
 
 export default function(hljs) {
   const regex = hljs.regex;
-  const IDENT_RE = /[a-zA-Z_$][a-zA-Z0-9_$]*/;
+  const IDENT_RE = /[a-zA-Z_$][a-zA-Z0-9_$]*/; 
   const RESERVED_WORDS = [
     "def",
     "switch",
